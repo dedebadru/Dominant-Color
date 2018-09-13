@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Adaptive Backgrounds</title>
+  <style type="text/css">
+    body{
+      margin: 0;
+    }
+    .image{
+      text-align: center;
+      display: block;
+    }
+    .image img{
+      width: 450px;
+    }
+  </style>
+</head>
+<body>
+  <div class="image">
+    <img src="lib/jquery-adaptive-backgrounds/demos/images/1.jpg" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-1.png" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-2.png" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-3.png" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-4.png" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-5.png" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-6.png" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-7.png" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-8.png" data-adaptive-background>
+  </div>
+</body>
+
+<script src="lib/color-thief/examples/js/jquery.js"></script>
+<script src="lib/jquery-adaptive-backgrounds/src/jquery.adaptive-backgrounds.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $.adaptiveBackground.run();
+  });
+</script>
+</html>

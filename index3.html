@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Primarycolor</title>
+  <style type="text/css">
+    body{
+      margin: 0;
+    }
+    .image{
+      text-align: center;
+      display: block;
+    }
+    .image img{
+      width: 450px;
+    }
+  </style>
+</head>
+<body>
+  <div class="image">
+    <img src="lib/jquery-adaptive-backgrounds/demos/images/1.jpg" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-1.png">
+  </div>
+  <div class="image">
+    <img src="images/image-2.png">
+  </div>
+  <div class="image">
+    <img src="images/image-3.png">
+  </div>
+  <div class="image">
+    <img src="images/image-4.png">
+  </div>
+  <div class="image">
+    <img src="images/image-5.png">
+  </div>
+  <div class="image">
+    <img src="images/image-6.png">
+  </div>
+  <div class="image">
+    <img src="images/image-7.png">
+  </div>
+  <div class="image">
+    <img src="images/image-8.png">
+  </div>
+</body>
+
+<script src="lib/color-thief/examples/js/jquery.js"></script>
+<script src="lib/jquery-primarycolor/jquery.primarycolor.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $('img').primaryColor(function(color) {
+      $(this).parents('div.image').css('background-color', 'rgb('+color+')');
+    });
+  });
+</script>
+</html>

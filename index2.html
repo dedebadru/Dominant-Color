@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Thief</title>
+  <style type="text/css">
+    body{
+      margin: 0;
+    }
+    .image{
+      text-align: center;
+      display: block;
+    }
+    .image img{
+      width: 450px;
+    }
+  </style>
+</head>
+<body>
+  <div class="image">
+    <img src="lib/jquery-adaptive-backgrounds/demos/images/1.jpg" data-adaptive-background>
+  </div>
+  <div class="image">
+    <img src="images/image-1.png">
+  </div>
+  <div class="image">
+    <img src="images/image-2.png">
+  </div>
+  <div class="image">
+    <img src="images/image-3.png">
+  </div>
+  <div class="image">
+    <img src="images/image-4.png">
+  </div>
+  <div class="image">
+    <img src="images/image-5.png">
+  </div>
+  <div class="image">
+    <img src="images/image-6.png">
+  </div>
+  <div class="image">
+    <img src="images/image-7.png">
+  </div>
+  <div class="image">
+    <img src="images/image-8.png">
+  </div>
+</body>
+
+<!-- <script src="lib/color-thief/examples/js/jquery.js"></script> -->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<script src="lib/color-scheme-js/lib/color-scheme.js"></script>
+<!-- <script src="lib/color-scheme-js/lib/color-scheme.min.js"></script> -->
+<script src="lib/color-thief/src/color-thief.js"></script>
+<script type="text/javascript">
+  function toHexa(rgb){
+    return (
+      // ("#") +
+      (parseInt(rgb[0], 10).toString(16)).slice(-2) +
+      (parseInt(rgb[1], 10).toString(16)).slice(-2) +
+      (parseInt(rgb[2], 10).toString(16)).slice(-2)
+    );
+  }
+
+  $(function(){
+    var scm = new ColorScheme();
+    var colorThief = new ColorThief();
+    $('img').each(function(index, image){
+      var color = colorThief.getColor(image);
+      $(image).parents('div.image').css('background-color', 'rgb('+color+')');
+
+      scm.from_hex(toHexa(color))
+       // .from_hue(21)
+       .scheme("monochromatic")
+       // .distance(0.1)
+       // .add_complement(false)
+       .variation("pastel")
+       .web_safe(true);
+
+      console.log(scm.colors());
+    });
+  });
+</script>
+</html>
